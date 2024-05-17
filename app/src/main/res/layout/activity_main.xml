@@ -38,6 +38,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="15dp"
         android:text="Rilevamento posizione..."
+        android:textColor="#204A86"
         android:textSize="20dp"
         android:textStyle="bold"
         app:layout_constraintBottom_toTopOf="@+id/progressBar"
