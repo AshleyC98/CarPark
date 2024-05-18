@@ -22,6 +22,7 @@ class DetectedLocation : AppCompatActivity(), OnMapReadyCallback {
     private var longitude by Delegates.notNull<Double>()
     private lateinit var date: String
     private lateinit var time: String
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_detected_location)
@@ -35,6 +36,7 @@ class DetectedLocation : AppCompatActivity(), OnMapReadyCallback {
         setupClickListeners()
 
         setNavigationDrawer()
+
     }
 
     private fun setNavigationDrawer() {
@@ -61,6 +63,7 @@ class DetectedLocation : AppCompatActivity(), OnMapReadyCallback {
             true
         }
     }
+
     private fun extractIntentData() {
         address = intent.getStringExtra("ADDRESS").toString()
         latitude = intent.getStringExtra("LATITUDE")!!.toDouble()
