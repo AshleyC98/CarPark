@@ -13,17 +13,20 @@ import android.os.Bundle
 import android.os.Looper
 import android.provider.Settings
 import android.view.View
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityCompat
+import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.gms.location.FusedLocationProviderClient
 import com.google.android.gms.location.LocationCallback
 import com.google.android.gms.location.LocationRequest
 import com.google.android.gms.location.LocationResult
 import com.google.android.gms.location.LocationServices
+import com.google.android.material.navigation.NavigationView
 import java.io.IOException
 import java.text.SimpleDateFormat
 import java.util.Calendar
@@ -38,8 +41,31 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        setNavigationDrawer()
         setClient()
         getLocation()
+    }
+
+    private fun setNavigationDrawer() {
+        findViewById<TextView>(R.id.title).text = "Home"
+        val drawerLayout = findViewById<DrawerLayout>(R.id.drawerLayout)
+        val btn_drawer = findViewById<ImageButton>(R.id.btnDrawer)
+        val navigationView = findViewById<NavigationView>(R.id.navigationView)
+        btn_drawer.setOnClickListener {
+            drawerLayout.open()
+        }
+        navigationView.setNavigationItemSelectedListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.home -> {
+                }
+
+                R.id.locations -> {
+                    val intent = Intent(this, MyLocations::class.java)
+                    startActivity(intent)
+                }
+            }
+            true
+        }
     }
 
     private fun setClient() {
