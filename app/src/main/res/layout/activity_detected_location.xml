@@ -197,7 +197,7 @@
             android:layout_marginBottom="30dp"
             android:background="#204A86"
             android:orientation="vertical"
-            app:layout_constraintBottom_toTopOf="@+id/img_save"
+            app:layout_constraintBottom_toTopOf="@+id/img_delete"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/cv_longitude">
@@ -214,7 +214,7 @@
         </LinearLayout>
 
         <ImageView
-            android:id="@+id/img_save"
+            android:id="@+id/img_delete"
             android:layout_width="70dp"
             android:layout_height="70dp"
             android:layout_marginStart="125dp"
@@ -231,9 +231,9 @@
             android:textSize="20dp"
             android:textColor="#204A86"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/img_save"
+            app:layout_constraintEnd_toEndOf="@+id/img_delete"
             app:layout_constraintHorizontal_bias="0.543"
-            app:layout_constraintStart_toStartOf="@+id/img_save" />
+            app:layout_constraintStart_toStartOf="@+id/img_delete" />
 
         <ImageView
             android:id="@+id/img_share"

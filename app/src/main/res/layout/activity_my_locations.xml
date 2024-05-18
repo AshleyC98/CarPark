@@ -39,10 +39,9 @@
 
         <ImageView
             android:id="@+id/img_no_locations"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_marginTop="200dp"
-            android:alpha="0.4"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginTop="350dp"
             android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -54,6 +53,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Nessuna posizione salvata"
+            android:textSize="20dp"
+            android:textStyle="bold"
             android:textColor="#204A86"
             android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
