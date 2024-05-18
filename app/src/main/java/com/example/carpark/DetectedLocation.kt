@@ -1,12 +1,16 @@
 package com.example.carpark
 
+import android.content.Intent
 import android.os.Bundle
+import android.widget.ImageButton
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.drawerlayout.widget.DrawerLayout
 import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
+import com.google.android.material.navigation.NavigationView
 import kotlin.properties.Delegates
 
 class DetectedLocation : AppCompatActivity(), OnMapReadyCallback {
@@ -29,8 +33,34 @@ class DetectedLocation : AppCompatActivity(), OnMapReadyCallback {
         initializeMap()
 
         setupClickListeners()
+
+        setNavigationDrawer()
     }
 
+    private fun setNavigationDrawer() {
+        val drawerLayout = findViewById<DrawerLayout>(R.id.drawerLayout)
+        val btn_drawer = findViewById<ImageButton>(R.id.btnDrawer)
+        val navigationView = findViewById<NavigationView>(R.id.navigationView)
+        findViewById<TextView>(R.id.title).text = locality
+        btn_drawer.setOnClickListener {
+            drawerLayout.open()
+        }
+        navigationView.setNavigationItemSelectedListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.home -> {
+                    val intent = Intent(this, MainActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                }
+                R.id.locations -> {
+                    val intent = Intent(this, MyLocations::class.java)
+                    startActivity(intent)
+                    finish()
+                }
+            }
+            true
+        }
+    }
     private fun extractIntentData() {
         address = intent.getStringExtra("ADDRESS").toString()
         latitude = intent.getStringExtra("LATITUDE")!!.toDouble()
