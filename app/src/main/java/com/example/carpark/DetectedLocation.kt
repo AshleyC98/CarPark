@@ -28,7 +28,7 @@ class DetectedLocation : AppCompatActivity(), OnMapReadyCallback {
 
         initializeMap()
 
-        //setupClickListeners()
+        setupClickListeners()
     }
 
     private fun extractIntentData() {
