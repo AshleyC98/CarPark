@@ -43,7 +43,7 @@
             android:id="@+id/img_no_locations"
             android:layout_width="100dp"
             android:layout_height="100dp"
-            android:layout_marginTop="350dp"
+            android:layout_marginTop="300dp"
             android:visibility="gone"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

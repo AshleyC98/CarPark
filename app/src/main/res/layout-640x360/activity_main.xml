@@ -3,10 +3,10 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/drawerLayout"
-    android:background="@color/white"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MyLocations">
+    android:background="@color/white"
+    tools:context=".MainActivity">
 
     <ImageView
         android:layout_width="wrap_content"
@@ -25,53 +25,43 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/recycler_view"
-            android:layout_width="0dp"
-            android:layout_height="0dp"
+        <ImageView
+            android:id="@+id/btn_park"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="200dp"
+            android:layout_marginBottom="400dp"
+            android:src="@drawable/parking_icon"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:layout_marginTop="60dp"
-            android:layout_marginBottom="20dp">
-
-        </androidx.recyclerview.widget.RecyclerView>
-
-
-        <ImageView
-            android:id="@+id/img_no_locations"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:layout_marginTop="350dp"
-            android:visibility="gone"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/baseline_location_off_24" />
+            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
-            android:id="@+id/tv_no_locations"
+            android:id="@+id/tv_loading"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Nessuna posizione salvata"
-            android:textSize="16dp"
+            android:layout_marginBottom="10dp"
+            android:text="Rilevamento posizione..."
             android:textColor="#204A86"
+            android:textSize="16dp"
             android:visibility="gone"
+            app:layout_constraintBottom_toTopOf="@+id/progressBar"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/img_no_locations" />
+            app:layout_constraintStart_toStartOf="parent" />
 
-        <ImageView
-            android:id="@+id/delete_all"
-            android:layout_width="30dp"
-            android:layout_height="30dp"
-            android:layout_marginTop="14dp"
-            android:layout_marginEnd="25dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:srcCompat="@drawable/baseline_delete_all_24" />
-
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="0dp"
+            android:layout_height="20dp"
+            android:layout_marginBottom="170dp"
+            android:progressTint="#204A86"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@+id/tv_loading"
+            app:layout_constraintStart_toStartOf="@+id/tv_loading" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.navigation.NavigationView
@@ -80,11 +70,12 @@
         android:layout_height="match_parent"
         android:layout_gravity="start"
         android:background="#204A86"
-        app:itemIconPadding="20dp"
         app:headerLayout="@layout/nav_header"
-        app:itemTextColor="@color/white"
+        app:itemIconPadding="20dp"
         app:itemIconTint="@color/white"
+        app:itemTextColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/drawer_items" />
+
 </androidx.drawerlayout.widget.DrawerLayout>

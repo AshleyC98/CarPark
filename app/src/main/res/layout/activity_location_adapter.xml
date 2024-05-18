@@ -15,23 +15,28 @@
         android:layout_marginLeft="15dp"
         android:layout_marginTop="10dp"
         android:layout_marginRight="15dp"
-        app:cardBackgroundColor="#204A86"
+        android:backgroundTint="#204A86"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:background="@color/white"
+            android:layout_marginLeft="2dp"
+            android:layout_marginRight="2dp"
+            android:layout_marginTop="2dp"
+            android:layout_marginBottom="2dp">
 
             <TextView
                 android:id="@+id/tv_date"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="start"
-                android:padding="5dp"
+                android:padding="3dp"
                 android:text="Data"
-                android:textColor="@color/white"
+                android:textColor="#204A86"
                 android:textSize="16dp"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -41,9 +46,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="start"
-                android:padding="5dp"
+                android:padding="3dp"
                 android:text="Indirizzo"
-                android:textColor="@color/white"
+                android:textColor="#204A86"
                 android:textSize="16dp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintStart_toStartOf="@+id/tv_date"
@@ -54,9 +59,9 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:gravity="start"
-                android:padding="5dp"
+                android:padding="3dp"
                 android:text="Ora"
-                android:textColor="@color/white"
+                android:textColor="#204A86"
                 android:textSize="16dp"
                 app:layout_constraintStart_toEndOf="@+id/tv_date"
                 app:layout_constraintTop_toTopOf="parent" />

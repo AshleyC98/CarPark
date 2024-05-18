@@ -147,6 +147,7 @@ class MainActivity : AppCompatActivity() {
             override fun onLocationResult(locationResult: LocationResult) {
                 super.onLocationResult(locationResult)
                 val location = locationResult.lastLocation
+                progress_bar.progress = 100
                 if (location != null) {
                     updateLocation(location)
                     fusedLocationClient.removeLocationUpdates(this)
@@ -168,7 +169,6 @@ class MainActivity : AppCompatActivity() {
 
     private fun updateLocation(location: Location) {
         try {
-            progress_bar.progress = 100
             val geocoder = Geocoder(this, Locale.getDefault())
             val list: MutableList<Address>? =
                 geocoder.getFromLocation(location.latitude, location.longitude, 1)
@@ -188,6 +188,8 @@ class MainActivity : AppCompatActivity() {
             locationIntent.putExtra("LOCALITY", locality)
             locationIntent.putExtra("LATITUDE", "$latitude")
             locationIntent.putExtra("LONGITUDE", "$longitude")
+            progress_bar.visibility = View.GONE
+            tv_loading.visibility = View.GONE
             startActivity(locationIntent)
         } catch (e: IOException) {
             Toast.makeText(this, "Errore durante la geocodifica", Toast.LENGTH_LONG).show()
