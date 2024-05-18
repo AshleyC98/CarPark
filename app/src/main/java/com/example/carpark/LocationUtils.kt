@@ -15,7 +15,7 @@ object LocationUtils {
         context.startActivity(mapsIntent)
     }
 
-    /*fun shareLocation(context: Context, address: String) {
+    fun shareLocation(context: Context, address: String) {
         val mapsUrl = "https://www.google.com/maps?q=${Uri.encode(address)}"
         val shareIntent = Intent(Intent.ACTION_SEND)
         shareIntent.type = "text/plain"
@@ -26,7 +26,7 @@ object LocationUtils {
     fun saveLocation(context: Context, location: Location) {
         val db = DataBaseHelper(context)
         db.insertData(location)
-    }*/
+    }
 
     fun onMapReady(googleMap: GoogleMap, latitude: Double, longitude: Double, address: String) {
         val location = LatLng(latitude, longitude)

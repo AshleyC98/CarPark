@@ -55,7 +55,7 @@ class DetectedLocation : AppCompatActivity(), OnMapReadyCallback {
         mapFragment?.getMapAsync(this)
     }
 
-    /*private fun setupClickListeners() {
+    private fun setupClickListeners() {
         findViewById<ImageView>(R.id.img_share).setOnClickListener {
             LocationUtils.shareLocation(this, address)
         }
@@ -64,7 +64,7 @@ class DetectedLocation : AppCompatActivity(), OnMapReadyCallback {
             val location = Location(date, time, address, country, locality, latitude, longitude)
             LocationUtils.saveLocation(this, location)
         }
-    }*/
+    }
 
     override fun onMapReady(googleMap: GoogleMap) {
         LocationUtils.onMapReady(googleMap, latitude, longitude, address)
