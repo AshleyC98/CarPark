@@ -93,7 +93,7 @@ class DetectedLocation : AppCompatActivity(), OnMapReadyCallback {
             LocationUtils.shareLocation(this, address)
         }
 
-        findViewById<ImageView>(R.id.img_delete).setOnClickListener {
+        findViewById<ImageView>(R.id.img_save).setOnClickListener {
             val location = Location(date, time, address, country, locality, latitude, longitude)
             LocationUtils.saveLocation(this, location)
         }
