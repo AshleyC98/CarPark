@@ -10,6 +10,7 @@ import android.location.Location
 import android.location.LocationManager
 import android.net.ConnectivityManager
 import android.os.Bundle
+import android.os.Handler
 import android.os.Looper
 import android.provider.Settings
 import android.view.View
@@ -39,6 +40,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var tv_loading: TextView
     private lateinit var progress_bar: ProgressBar
     private lateinit var tv_hint: TextView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -106,22 +108,28 @@ class MainActivity : AppCompatActivity() {
         tv_loading = findViewById(R.id.tv_loading)
         progress_bar = findViewById(R.id.progressBar)
         findViewById<ImageView>(R.id.btn_park).setOnClickListener {
-            tv_loading.visibility = View.VISIBLE
+            progress_bar.progress = 0
             progress_bar.visibility = View.VISIBLE
-            progress_bar.progress = 20
+            tv_loading.visibility = View.VISIBLE
             tv_hint.visibility = View.GONE
             if (isInternetEnabled(this)) {
-                if (isLocationEnabled(this)) {
-                    requestLocationUpdates()
-                } else {
-                    Toast.makeText(this, "Attivare la posizione", Toast.LENGTH_LONG).show()
-                    val settingsIntent =
-                        Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS)
-                    startActivity(settingsIntent)
-                    tv_loading.visibility = View.GONE
-                    progress_bar.visibility = View.GONE
-                    progress_bar.progress = 0
-                }
+                progress_bar.progress = 20
+                Handler().postDelayed({
+                    if (isLocationEnabled(this)) {
+                        progress_bar.progress = 50
+                        Handler().postDelayed({
+                            requestLocationUpdates()
+                        }, 200) // Ritardo di 200 millisecondi dopo aver impostato il progresso al 50%
+                    } else {
+                        Toast.makeText(this, "Attivare la posizione", Toast.LENGTH_LONG).show()
+                        val settingsIntent =
+                            Intent(Settings.ACTION_LOCATION_SOURCE_SETTINGS)
+                        startActivity(settingsIntent)
+                        tv_loading.visibility = View.GONE
+                        progress_bar.visibility = View.GONE
+                        progress_bar.progress = 0
+                    }
+                }, 200) // Ritardo di 200 millisecondi dopo aver impostato il progresso al 20%
             } else {
                 Toast.makeText(this, "Nessun accesso ad Internet", Toast.LENGTH_LONG).show()
                 tv_loading.visibility = View.GONE
@@ -130,6 +138,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
+
 
     private fun requestLocationUpdates() {
         if (ActivityCompat.checkSelfPermission(
@@ -146,20 +155,25 @@ class MainActivity : AppCompatActivity() {
             progress_bar.progress = 0
             return
         }
-        progress_bar.progress = 100
         locationCallback = object : LocationCallback() {
             override fun onLocationResult(locationResult: LocationResult) {
                 super.onLocationResult(locationResult)
                 val location = locationResult.lastLocation
                 if (location != null) {
-                    updateLocation(location)
-                    fusedLocationClient.removeLocationUpdates(this)
+                    progress_bar.progress = 80
+                    Handler().postDelayed({
+                        updateLocation(location)
+                        fusedLocationClient.removeLocationUpdates(this)
+                    }, 300) // Ritardo di 200 millisecondi dopo aver impostato il progresso al 80%
                 } else {
                     Toast.makeText(
                         this@MainActivity,
                         "Posizione non disponibile",
                         Toast.LENGTH_LONG
                     ).show()
+                    tv_loading.visibility = View.GONE
+                    progress_bar.visibility = View.GONE
+                    progress_bar.progress = 0
                 }
             }
         }
@@ -169,6 +183,7 @@ class MainActivity : AppCompatActivity() {
             Looper.getMainLooper()
         )
     }
+
 
     private fun updateLocation(location: Location) {
         try {
@@ -191,10 +206,15 @@ class MainActivity : AppCompatActivity() {
             locationIntent.putExtra("LOCALITY", locality)
             locationIntent.putExtra("LATITUDE", "$latitude")
             locationIntent.putExtra("LONGITUDE", "$longitude")
-            progress_bar.visibility = View.GONE
-            tv_loading.visibility = View.GONE
-            startActivity(locationIntent)
-            tv_hint.visibility = View.VISIBLE
+
+            progress_bar.progress = 100
+            Handler().postDelayed({
+                progress_bar.visibility = View.GONE
+                tv_loading.visibility = View.GONE
+                startActivity(locationIntent)
+                tv_hint.visibility = View.VISIBLE
+            }, 400) // Ritardo di 200 millisecondi dopo aver impostato il progresso al 100%
+
         } catch (e: IOException) {
             Toast.makeText(this, "Errore durante la geocodifica", Toast.LENGTH_LONG).show()
             tv_loading.visibility = View.GONE
@@ -202,6 +222,7 @@ class MainActivity : AppCompatActivity() {
             progress_bar.progress = 0
         }
     }
+
 
     override fun onRequestPermissionsResult(
         requestCode: Int,

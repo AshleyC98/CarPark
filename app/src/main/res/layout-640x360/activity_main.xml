@@ -59,6 +59,7 @@
             android:layout_marginBottom="170dp"
             android:progressTint="#204A86"
             android:visibility="gone"
+            android:max="100"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/tv_loading"
             app:layout_constraintStart_toStartOf="@+id/tv_loading" />
