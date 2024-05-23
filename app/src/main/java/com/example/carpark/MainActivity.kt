@@ -38,6 +38,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var locationRequest: LocationRequest
     private lateinit var tv_loading: TextView
     private lateinit var progress_bar: ProgressBar
+    private lateinit var tv_hint: TextView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -101,12 +102,14 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun getLocation() {
+        tv_hint = findViewById(R.id.tv_hint)
         tv_loading = findViewById(R.id.tv_loading)
         progress_bar = findViewById(R.id.progressBar)
         findViewById<ImageView>(R.id.btn_park).setOnClickListener {
             tv_loading.visibility = View.VISIBLE
             progress_bar.visibility = View.VISIBLE
             progress_bar.progress = 20
+            tv_hint.visibility = View.GONE
             if (isInternetEnabled(this)) {
                 if (isLocationEnabled(this)) {
                     requestLocationUpdates()
@@ -143,11 +146,11 @@ class MainActivity : AppCompatActivity() {
             progress_bar.progress = 0
             return
         }
+        progress_bar.progress = 100
         locationCallback = object : LocationCallback() {
             override fun onLocationResult(locationResult: LocationResult) {
                 super.onLocationResult(locationResult)
                 val location = locationResult.lastLocation
-                progress_bar.progress = 100
                 if (location != null) {
                     updateLocation(location)
                     fusedLocationClient.removeLocationUpdates(this)
@@ -191,6 +194,7 @@ class MainActivity : AppCompatActivity() {
             progress_bar.visibility = View.GONE
             tv_loading.visibility = View.GONE
             startActivity(locationIntent)
+            tv_hint.visibility = View.VISIBLE
         } catch (e: IOException) {
             Toast.makeText(this, "Errore durante la geocodifica", Toast.LENGTH_LONG).show()
             tv_loading.visibility = View.GONE
