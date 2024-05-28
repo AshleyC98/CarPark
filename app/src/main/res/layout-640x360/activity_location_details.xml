@@ -25,172 +25,101 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cv_longitude"
+        <TextView
+            android:id="@+id/tv_longitude"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
-            android:layout_marginTop="7dp"
+            android:layout_marginTop="10dp"
             android:layout_marginRight="15dp"
-            app:cardBackgroundColor="#204A86"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cv_latitude">
+            android:background="@drawable/rounded_corner"
+            android:padding="8dp"
+            android:text="1234567"
+            android:textColor="#204A86"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/tv_latitude" />
 
-            <TextView
-                android:id="@+id/tv_longitude"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:text="1234567"
-                android:background="@color/white"
-                android:textColor="#204A86"
-                android:textSize="16dp"
-                android:layout_marginTop="2dp"
-                android:layout_marginBottom="2dp"
-                android:layout_marginLeft="2dp"
-                android:layout_marginRight="2dp"/>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cv_locality"
+        <TextView
+            android:id="@+id/tv_locality"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
-            android:layout_marginTop="7dp"
+            android:layout_marginTop="10dp"
             android:layout_marginRight="15dp"
-            app:cardBackgroundColor="#204A86"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cv_country">
+            android:background="@drawable/rounded_corner"
+            android:padding="8dp"
+            android:text="Como"
+            android:textColor="#204A86"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/tv_country" />
 
-            <TextView
-                android:id="@+id/tv_locality"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:text="Como"
-                android:background="@color/white"
-                android:textColor="#204A86"
-                android:textSize="16dp"
-                android:layout_marginTop="2dp"
-                android:layout_marginBottom="2dp"
-                android:layout_marginLeft="2dp"
-                android:layout_marginRight="2dp"/>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cv_country"
+        <TextView
+            android:id="@+id/tv_country"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
-            android:layout_marginTop="7dp"
+            android:layout_marginTop="10dp"
             android:layout_marginRight="15dp"
-            app:cardBackgroundColor="#204A86"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cv_address">
+            android:background="@drawable/rounded_corner"
+            android:padding="8dp"
+            android:text="Italia"
+            android:textColor="#204A86"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/tv_address" />
 
-            <TextView
-                android:id="@+id/tv_country"
-                android:background="@color/white"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:text="Italia"
-                android:textColor="#204A86"
-                android:textSize="16dp"
-                android:layout_marginTop="2dp"
-                android:layout_marginBottom="2dp"
-                android:layout_marginLeft="2dp"
-                android:layout_marginRight="2dp"/>
-        </androidx.cardview.widget.CardView>
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cv_address"
+        <TextView
+            android:id="@+id/tv_address"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
-            android:layout_marginTop="7dp"
+            android:layout_marginTop="10dp"
             android:layout_marginRight="15dp"
-            app:cardBackgroundColor="#204A86"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cv_date_time">
+            android:background="@drawable/rounded_corner"
+            android:padding="8dp"
+            android:text="Via Giovanni Paolo II 23089 ecc.. "
+            android:textColor="#204A86"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/tv_date_time" />
 
-            <TextView
-                android:id="@+id/tv_address"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:background="@color/white"
-                android:text="Via Giovanni Paolo II 23089 ecc.. "
-                android:textColor="#204A86"
-                android:textSize="16dp"
-                android:layout_marginTop="2dp"
-                android:layout_marginBottom="2dp"
-                android:layout_marginLeft="2dp"
-                android:layout_marginRight="2dp"/>
-        </androidx.cardview.widget.CardView>
-
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cv_date_time"
+        <TextView
+            android:id="@+id/tv_date_time"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="70dp"
             android:layout_marginRight="15dp"
-            app:cardBackgroundColor="#204A86"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:background="@drawable/rounded_corner"
+            android:padding="8dp"
+            android:text="gg/mm/aa"
+            android:textColor="#204A86"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/tv_date_time"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:padding="5dp"
-                android:text="gg/mm/aa"
-                android:textColor="#204A86"
-                android:textSize="16dp"
-                android:layout_marginTop="2dp"
-                android:layout_marginBottom="2dp"
-                android:layout_marginLeft="2dp"
-                android:layout_marginRight="2dp"/>
-        </androidx.cardview.widget.CardView>
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cv_latitude"
+        <TextView
+            android:id="@+id/tv_latitude"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
-            android:layout_marginTop="7dp"
+            android:layout_marginTop="10dp"
             android:layout_marginRight="15dp"
-            app:cardBackgroundColor="#204A86"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cv_locality">
-
-            <TextView
-                android:id="@+id/tv_latitude"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:text="23456789"
-                android:background="@color/white"
-                android:textColor="#204A86"
-                android:textSize="16dp"
-                android:layout_marginTop="2dp"
-                android:layout_marginBottom="2dp"
-                android:layout_marginLeft="2dp"
-                android:layout_marginRight="2dp"/>
-        </androidx.cardview.widget.CardView>
+            android:background="@drawable/rounded_corner"
+            android:padding="8dp"
+            android:text="23456789"
+            android:textColor="#204A86"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/tv_locality" />
 
         <LinearLayout
             android:id="@+id/linearLayout"
-            android:layout_width="0dp"
+            android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginStart="15dp"
             android:layout_marginTop="15dp"
@@ -201,17 +130,17 @@
             app:layout_constraintBottom_toTopOf="@+id/img_delete"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cv_longitude">
+            app:layout_constraintTop_toBottomOf="@+id/tv_longitude">
 
             <fragment
                 android:id="@+id/id_map"
                 android:name="com.google.android.gms.maps.SupportMapFragment"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:layout_marginLeft="2dp"
-                android:layout_marginTop="2dp"
-                android:layout_marginRight="2dp"
-                android:layout_marginBottom="2dp" />
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginRight="5dp"
+                android:layout_marginBottom="5dp" />
         </LinearLayout>
 
         <ImageView
@@ -271,7 +200,7 @@
             android:layout_height="wrap_content"
             android:layout_marginBottom="16dp"
             android:text="Vai"
-            android:textSize="20dp"
+            android:textSize="16dp"
             android:textColor="#204A86"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/img_go"
