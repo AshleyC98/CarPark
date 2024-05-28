@@ -5,7 +5,6 @@
     android:id="@+id/drawerLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
     tools:context=".LocationDetails">
 
     <ImageView
@@ -145,8 +144,8 @@
 
         <ImageView
             android:id="@+id/img_share"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_marginEnd="65dp"
             app:layout_constraintBottom_toTopOf="@+id/tv_hint_share"
             app:layout_constraintEnd_toEndOf="parent"
@@ -166,8 +165,8 @@
 
         <ImageView
             android:id="@+id/img_delete"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             android:layout_marginStart="65dp"
             app:layout_constraintBottom_toTopOf="@+id/tv_hint_delete"
             app:layout_constraintStart_toStartOf="parent"
@@ -175,8 +174,8 @@
 
         <ImageView
             android:id="@+id/img_go"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
             app:layout_constraintBottom_toTopOf="@+id/tv_hint_go"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -198,7 +197,7 @@
             android:id="@+id/tv_hint_go"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="16dp"
+            android:layout_marginBottom="20dp"
             android:text="Vai"
             android:textSize="16dp"
             android:textColor="#204A86"

@@ -5,13 +5,13 @@
     android:id="@+id/drawerLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
     tools:context=".DetectedLocation">
 
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:scaleType="centerCrop"
+        android:alpha="0.1"
+        android:scaleType="fitXY"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -24,183 +24,112 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cv_longitude"
+        <TextView
+            android:id="@+id/tv_longitude"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="10dp"
             android:layout_marginRight="15dp"
-            app:cardBackgroundColor="#204A86"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cv_latitude">
+            android:background="@drawable/rounded_corner"
+            android:padding="8dp"
+            android:text="1234567"
+            android:textColor="#204A86"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/tv_latitude" />
 
-            <TextView
-                android:id="@+id/tv_longitude"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:text="1234567"
-                android:background="@color/white"
-                android:textColor="#204A86"
-                android:textSize="20dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"/>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cv_locality"
+        <TextView
+            android:id="@+id/tv_locality"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="10dp"
             android:layout_marginRight="15dp"
-            app:cardBackgroundColor="#204A86"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cv_country">
+            android:background="@drawable/rounded_corner"
+            android:padding="8dp"
+            android:text="Como"
+            android:textColor="#204A86"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/tv_country" />
 
-            <TextView
-                android:id="@+id/tv_locality"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:text="Como"
-                android:background="@color/white"
-                android:textColor="#204A86"
-                android:textSize="20dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"/>
-        </androidx.cardview.widget.CardView>
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cv_country"
+        <TextView
+            android:id="@+id/tv_country"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="10dp"
             android:layout_marginRight="15dp"
-            app:cardBackgroundColor="#204A86"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cv_address">
+            android:background="@drawable/rounded_corner"
+            android:padding="8dp"
+            android:text="Italia"
+            android:textColor="#204A86"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/tv_address" />
 
-            <TextView
-                android:id="@+id/tv_country"
-                android:background="@color/white"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="5dp"
-                android:text="Italia"
-                android:textColor="#204A86"
-                android:textSize="20dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"/>
-        </androidx.cardview.widget.CardView>
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cv_address"
+        <TextView
+            android:id="@+id/tv_address"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="10dp"
             android:layout_marginRight="15dp"
-            app:cardBackgroundColor="#204A86"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cv_date_time">
+            android:background="@drawable/rounded_corner"
+            android:padding="8dp"
+            android:text="Via Giovanni Paolo II 23089 ecc.. "
+            android:textColor="#204A86"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/tv_date_time" />
 
-            <TextView
-                android:id="@+id/tv_address"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:background="@color/white"
-                android:text="Via Giovanni Paolo II 23089 ecc.. "
-                android:textColor="#204A86"
-                android:textSize="20dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"/>
-        </androidx.cardview.widget.CardView>
-
-
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cv_date_time"
+        <TextView
+            android:id="@+id/tv_date_time"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
-            android:layout_marginTop="90dp"
+            android:layout_marginTop="70dp"
             android:layout_marginRight="15dp"
-            app:cardBackgroundColor="#204A86"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
+            android:background="@drawable/rounded_corner"
+            android:padding="8dp"
+            android:text="gg/mm/aa"
+            android:textColor="#204A86"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
-                android:id="@+id/tv_date_time"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:background="@color/white"
-                android:padding="8dp"
-                android:text="gg/mm/aa"
-                android:textColor="#204A86"
-                android:textSize="20dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"/>
-        </androidx.cardview.widget.CardView>
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/cv_latitude"
+        <TextView
+            android:id="@+id/tv_latitude"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginLeft="15dp"
             android:layout_marginTop="10dp"
             android:layout_marginRight="15dp"
-            app:cardBackgroundColor="#204A86"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cv_locality">
-
-            <TextView
-                android:id="@+id/tv_latitude"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:text="23456789"
-                android:background="@color/white"
-                android:textColor="#204A86"
-                android:textSize="20dp"
-                android:layout_marginTop="5dp"
-                android:layout_marginBottom="5dp"
-                android:layout_marginLeft="5dp"
-                android:layout_marginRight="5dp"/>
-        </androidx.cardview.widget.CardView>
+            android:background="@drawable/rounded_corner"
+            android:padding="8dp"
+            android:text="23456789"
+            android:textColor="#204A86"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/tv_locality" />
 
         <LinearLayout
             android:id="@+id/linearLayout"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:layout_marginStart="15dp"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="15dp"
             android:layout_marginEnd="15dp"
-            android:layout_marginBottom="30dp"
+            android:layout_marginBottom="15dp"
             android:background="#204A86"
             android:orientation="vertical"
-            app:layout_constraintBottom_toTopOf="@+id/img_delete"
+            app:layout_constraintBottom_toTopOf="@+id/img_save"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/cv_longitude">
+            app:layout_constraintTop_toBottomOf="@+id/tv_longitude">
 
             <fragment
                 android:id="@+id/id_map"
@@ -214,10 +143,10 @@
         </LinearLayout>
 
         <ImageView
-            android:id="@+id/img_delete"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_marginStart="125dp"
+            android:id="@+id/img_save"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginStart="80dp"
             app:layout_constraintBottom_toTopOf="@+id/tv_hint_save"
             app:layout_constraintStart_toStartOf="parent"
             app:srcCompat="@drawable/baseline_save_24" />
@@ -226,20 +155,20 @@
             android:id="@+id/tv_hint_save"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="50dp"
+            android:layout_marginBottom="20dp"
             android:text="Salva"
-            android:textSize="20dp"
             android:textColor="#204A86"
+            android:textSize="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="@+id/img_delete"
+            app:layout_constraintEnd_toEndOf="@+id/img_save"
             app:layout_constraintHorizontal_bias="0.543"
-            app:layout_constraintStart_toStartOf="@+id/img_delete" />
+            app:layout_constraintStart_toStartOf="@+id/img_save" />
 
         <ImageView
             android:id="@+id/img_share"
-            android:layout_width="70dp"
-            android:layout_height="70dp"
-            android:layout_marginEnd="125dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginEnd="80dp"
             app:layout_constraintBottom_toTopOf="@+id/tv_hint_share"
             app:layout_constraintEnd_toEndOf="parent"
             app:srcCompat="@drawable/baseline_share_24" />
@@ -248,21 +177,21 @@
             android:id="@+id/tv_hint_share"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="50dp"
+            android:layout_marginBottom="20dp"
             android:text="Condividi"
-            android:textSize="20dp"
             android:textColor="#204A86"
+            android:textSize="16dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@+id/img_share"
             app:layout_constraintStart_toStartOf="@+id/img_share" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <com.google.android.material.navigation.NavigationView
-        android:id="@+id/navigationView"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_gravity="start"
         android:background="#204A86"
+        android:id="@+id/navigationView"
+        android:layout_gravity="start"
+        android:layout_height="match_parent"
+        android:layout_width="wrap_content"
         app:headerLayout="@layout/nav_header"
         app:itemIconPadding="20dp"
         app:itemIconTint="@color/white"
