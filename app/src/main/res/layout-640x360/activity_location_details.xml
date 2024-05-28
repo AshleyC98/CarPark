@@ -236,7 +236,7 @@
             app:layout_constraintStart_toStartOf="@+id/img_share" />
 
         <ImageView
-            android:id="@+id/img_del"
+            android:id="@+id/img_delete"
             android:layout_width="50dp"
             android:layout_height="50dp"
             android:layout_marginStart="65dp"

@@ -10,6 +10,8 @@ import android.view.animation.AnimationUtils
 import android.widget.LinearLayout
 import android.widget.TextView
 import androidx.cardview.widget.CardView
+import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.constraintlayout.widget.ConstraintSet.Constraint
 import androidx.recyclerview.widget.RecyclerView
 
 class LocationAdapter(
@@ -34,7 +36,7 @@ class LocationAdapter(
         private val dateTextView: TextView = itemView.findViewById(R.id.tv_date)
         private val timeTextView: TextView = itemView.findViewById(R.id.tv_time)
         private val addressTextView: TextView = itemView.findViewById(R.id.tv_address_txt)
-        private val cardView: CardView = itemView.findViewById(R.id.cardView)
+        private val cardView: ConstraintLayout = itemView.findViewById(R.id.cardView)
 
         fun bind(location: Location) {
             dateTextView.text = location.date
@@ -42,14 +44,14 @@ class LocationAdapter(
             addressTextView.text = location.address
 
             cardView.setOnClickListener {
-                val intent = Intent(context, LocationDetails::class.java).apply {
+                val intent = Intent(itemView.context, LocationDetails::class.java).apply {
                     putExtra("DATE", location.date)
                     putExtra("TIME", location.time)
                     putExtra("ADDRESS", location.address)
-
                 }
-                activity.startActivityForResult(intent, 1)
+                (itemView.context as Activity).startActivityForResult(intent, 1)
             }
         }
     }
+
 }
