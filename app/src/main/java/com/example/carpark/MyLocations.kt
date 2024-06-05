@@ -25,13 +25,15 @@ class MyLocations : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_my_locations)
         locations = ArrayList()
-        recycler_view = findViewById(R.id.recycler_view)
+        setNavigationDrawer()
         db = DataBaseHelper(this)
         setRecyclerView()
         findViewById<ImageView>(R.id.delete_all).setOnClickListener {
             delete()
         }
+    }
 
+    private fun setNavigationDrawer() {
         val drawerLayout = findViewById<DrawerLayout>(R.id.drawerLayout)
         val btn_drawer = findViewById<ImageButton>(R.id.btnDrawer)
         val navigationView = findViewById<NavigationView>(R.id.navigationView)
@@ -63,7 +65,6 @@ class MyLocations : AppCompatActivity() {
         builder.setNegativeButton(
             "Si"
         ) { dialogInterface, i ->
-            val db = DataBaseHelper(this@MyLocations)
             db.deleteAll()
             val intent = Intent(this, MyLocations::class.java)
             startActivity(intent)
@@ -73,6 +74,7 @@ class MyLocations : AppCompatActivity() {
     }
 
     fun setRecyclerView() {
+        recycler_view = findViewById(R.id.recycler_view)
         locations = storeDataInArray()
         recycler_view.setHasFixedSize(true)
 
