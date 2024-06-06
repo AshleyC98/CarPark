@@ -10,8 +10,7 @@ import android.widget.TextView
 import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.RecyclerView
 
-class LocationAdapter(
-    val activity: Activity, val context: Context, private val locationList: List<Location>
+class LocationAdapter(val context: Context, val locationList: List<Location>
 ) : RecyclerView.Adapter<LocationAdapter.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {

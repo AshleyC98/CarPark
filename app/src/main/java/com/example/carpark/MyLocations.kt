@@ -85,7 +85,7 @@ class MyLocations : AppCompatActivity() {
         layoutManager.stackFromEnd = true
         recycler_view.layoutManager = layoutManager
 
-        locationAdapter = LocationAdapter(this@MyLocations, this, locations)
+        locationAdapter = LocationAdapter(this@MyLocations, locations)
         recycler_view.adapter = locationAdapter
     }
 
